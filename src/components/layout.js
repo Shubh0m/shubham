@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import HeaderLogo from "../img/logo/anaglyph-Artboard 1-256.png"
 
-const Layout = props => {
+const Layout = (props) => {
   const { title, children } = props
   const [toggleNav, setToggleNav] = React.useState(false)
   return (
@@ -30,44 +31,26 @@ const Layout = props => {
                 <Link to={`/`}>Home</Link>
               </li>
               <li className="nav-about" role="menuitem">
-                <Link to={`/about`}>About</Link>
-              </li>
-              <li className="nav-elements" role="menuitem">
-                <Link to={`/elements`}>Elements</Link>
+                <Link to={`/contact`}>Contact Me</Link>
               </li>
             </ul>
           </nav>
           <div className="site-head-center">
             <Link className="site-head-logo" to={`/`}>
-              {title}
+              <img src={HeaderLogo} />
             </Link>
           </div>
           <div className="site-head-right">
             <div className="social-links">
               <a
-                href="https://www.facebook.com"
-                title="Facebook"
+                href="https://github.com/Daspy11/Daspy11.github.io"
+                title="Source Code on Github"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ fontSize: 32 }}
               >
-                Facebook
+                👨🏽‍💻
               </a>
-              <a
-                href="https://twitter.com"
-                title="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Twitter
-              </a>
-              <Link
-                to={`/rss.xml`}
-                title="RSS"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                RSS
-              </Link>
             </div>
           </div>
         </div>
@@ -77,17 +60,6 @@ const Layout = props => {
           {children}
         </div>
       </main>
-      <footer className="site-foot">
-        &copy; {new Date().getFullYear()} <Link to={`/`}>{title}</Link> &mdash;
-        Built with{" "}
-        <a
-          href="https://gatsbyjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Gatsby
-        </a>
-      </footer>
     </div>
   )
 }
